@@ -6,6 +6,7 @@ discord: Miro#8969
 
 """
 
+from tkinter import E
 import task_template as texts 
 
 
@@ -16,8 +17,15 @@ text = texts.TEXTS
 user_input = input(str('Hello, please insert your user name and password (separated by whitespace): '))
 user_input_list = user_input.split(' ')
 
-user_name = user_input_list[0]
-user_pass = user_input_list[1]
+try:
+    user_name = user_input_list[0]
+    user_pass = user_input_list[1]
+
+except IndexError:
+    print('xx')
 
 if user_name in user and user_pass in password:
     pass 
+
+else: 
+    print('wrong')
