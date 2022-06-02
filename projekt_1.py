@@ -5,6 +5,7 @@ email: kopecky.mir@gmail.com
 discord: Miro#8969
 
 """
+from typing import Text
 import task_template as texts 
 
 
@@ -20,8 +21,8 @@ for items in range(len(text)):
 
 
 
-# user_input = input(str('Hello, please insert your user name and password (separated by whitespace): '))
-# user_input_list = user_input.split(' ')
+user_input = input(str('Hello, please insert your user name and password (separated by whitespace): '))
+user_input_list = user_input.split(' ')
 
 
 for k, v in text_dic.items():
@@ -30,15 +31,45 @@ for k, v in text_dic.items():
     print(v + '\n')
 
 
-# try:
-#     user_name = user_input_list[0]
-#     user_pass = user_input_list[1]
+try:
+    user_name = user_input_list[0]
+    user_pass = user_input_list[1]
 
-# except IndexError:
-#     print('Please insert also your password.')
+except IndexError:
+    print('Please insert also your password.')
 
-# if user_name in user and user_pass in password:
-#     print(f'Hello user {user_name.capitalize()}')
+if user_name in user and user_pass in password:
+    print(f'Hello user {user_name.capitalize()}')
+    print('')
+    print('Texts to analyze: ')
+    print('')
 
-# else: 
-#     print('Wrong user name or password. The program has been terminated')
+    for k, v in text_dic.items():
+        print(k+1)
+        print('')
+        print(v + '\n')
+
+    text_number = int(input('Insert number of the text to analyze: ')) - 1 
+
+    if text_number == 0:
+        print(f'There are {len(text[text_number].split())} words in the selected text.')
+
+        count_lower = 0 
+
+        for i in text[text_number].split():
+            if i.islower():
+
+                count_lower += 1
+
+    elif text_number == 1:
+        print(f'There are {len(text[text_number].split())} words in the selected text.')
+    
+    elif text_number == 2:
+        print(f'There are {len(text[text_number].split())} words in the selected text.')
+
+    else: 
+        print('Wrong number!')
+       
+
+else: 
+    print('Wrong user name or password. The program has been terminated')
