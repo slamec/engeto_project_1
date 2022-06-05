@@ -55,11 +55,23 @@ if user_name in user and user_pass in password:
         # number of words
         print(f'There are {len(text[text_number].split())} words in the selected text.')
 
-        # number of words starting with title case
+        # number of words starting with titlecase
+        count_title = 0 
+        for i in text[text_number].split():
+            if i.istitle():
+                count_title += 1
+        
+        print(f'There are {count_title} titlecase words.')
 
-        # number of words starting with upper case
+        # number of words starting with uppercase
+        count_upper = 0 
+        for i in text[text_number].split():
+            if i.isupper() and not i.istitle():
+                count_upper += 1        
+        
+        print(f'There are {count_upper} uppercase words.')
 
-        # number of words starting with lower case
+        # number of words starting with lowercase
         count_lower = 0 
         for i in text[text_number].split():
             if i.islower():
@@ -67,13 +79,46 @@ if user_name in user and user_pass in password:
 
         print(f'There are {count_lower} lowercase words.')
 
+        # number of numbers 
+        count_digit = 0 
+        for i in text[text_number].split():
+            if i.isdigit():
+                count_digit += 1
+
+        print(f'There are {count_digit} numeric strings.')
+
+        # sum of digits
+        total = []
+
+        for d in text[text_number].split():
+            if d.isdigit():
+        
+                total.append(int(d))
+        
+        print(f'The sum of all the numbers {sum(total)}')
 
 
     elif text_number == 1:
         # number of words
         print(f'There are {len(text[text_number].split())} words in the selected text.')
 
-        # number of words starting with lower case
+        # number of words starting with titlecase
+        count_title = 0 
+        for i in text[text_number].split():
+            if i.istitle():
+                count_title += 1
+        
+        print(f'There are {count_title} titlecase words.')
+
+        # number of words starting with uppercase
+        count_upper = 0 
+        for i in text[text_number].split():
+            if i.isupper() and not i.istitle():
+                count_upper += 1        
+        
+        print(f'There are {count_upper} uppercase words.')
+
+        # number of words starting with lowercase
         count_lower = 0 
         for i in text[text_number].split():
             if i.islower():
@@ -81,17 +126,69 @@ if user_name in user and user_pass in password:
 
         print(f'There are {count_lower} lowercase words.')    
 
+        # number of numbers 
+        count_digit = 0 
+        for i in text[text_number].split():
+            if i.isdigit():
+                count_digit += 1
+
+        print(f'There are {count_digit} numeric strings.')
+
+        # sum of digits
+        total = []
+
+        for d in text[text_number].split():
+            if d.isdigit():
+        
+                total.append(int(d))
+        
+        print(f'The sum of all the numbers {sum(total)}')
+
     elif text_number == 2:
         # number of words
         print(f'There are {len(text[text_number].split())} words in the selected text.')
 
-        # number of words starting with lower case
+        # number of words starting with titlecase
+        count_title = 0 
+        for i in text[text_number].split():
+            if i.istitle():
+                count_title += 1
+        
+        print(f'There are {count_title} titlecase words.')
+
+        # number of words starting with uppercase
+        count_upper = 0 
+        for i in text[text_number].split():
+            if i.isupper() and not i.istitle():
+                count_upper += 1        
+        
+        print(f'There are {count_upper} uppercase words.')
+
+        # number of words starting with lowercase
         count_lower = 0 
         for i in text[text_number].split():
             if i.islower():
                 count_lower += 1
 
         print(f'There are {count_lower} lowercase words.')
+
+        # number of numbers 
+        count_digit = 0 
+        for i in text[text_number].split():
+            if i.isdigit():
+                count_digit += 1
+
+        print(f'There are {count_digit} numeric strings.')
+
+        # sum of digits
+        total = []
+
+        for d in text[text_number].split():
+            if d.isdigit():
+        
+                total.append(int(d))
+        
+        print(f'The sum of all the numbers {sum(total)}')
 
     else: 
         print('Wrong number!')
