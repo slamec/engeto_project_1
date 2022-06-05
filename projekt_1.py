@@ -52,20 +52,46 @@ if user_name in user and user_pass in password:
     text_number = int(input('Insert number of the text to analyze: ')) - 1 
 
     if text_number == 0:
+        # number of words
         print(f'There are {len(text[text_number].split())} words in the selected text.')
 
-        count_lower = 0 
+        # number of words starting with title case
 
+        # number of words starting with upper case
+
+        # number of words starting with lower case
+        count_lower = 0 
         for i in text[text_number].split():
             if i.islower():
-
                 count_lower += 1
 
+        print(f'There are {count_lower} lowercase words.')
+
+
+
     elif text_number == 1:
+        # number of words
         print(f'There are {len(text[text_number].split())} words in the selected text.')
-    
+
+        # number of words starting with lower case
+        count_lower = 0 
+        for i in text[text_number].split():
+            if i.islower():
+                count_lower += 1
+
+        print(f'There are {count_lower} lowercase words.')    
+
     elif text_number == 2:
+        # number of words
         print(f'There are {len(text[text_number].split())} words in the selected text.')
+
+        # number of words starting with lower case
+        count_lower = 0 
+        for i in text[text_number].split():
+            if i.islower():
+                count_lower += 1
+
+        print(f'There are {count_lower} lowercase words.')
 
     else: 
         print('Wrong number!')
