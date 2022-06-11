@@ -7,8 +7,9 @@ discord: Miro#8969
 """
 from typing import Text
 import task_template as texts 
+import collections
 
-
+lines = 30 * '-'
 user = ['bob', 'mike', 'ann', 'liz']
 password = ['123', 'pass123', 'password123', 'pass123']
 # text has 3 indices
@@ -19,27 +20,15 @@ text_dic = {}
 for items in range(len(text)):
     text_dic[items] = text[items]
 
+print(lines)
 
+user_name = input(str('Hello, insert your username: '))
+user_pass = input(str('Now please insert your password: '))
 
-user_input = input(str('Hello, please insert your user name and password (separated by whitespace): '))
-user_input_list = user_input.split(' ')
-
-
-for k, v in text_dic.items():
-    print(k+1)
-    print('')
-    print(v + '\n')
-
-
-try:
-    user_name = user_input_list[0]
-    user_pass = user_input_list[1]
-
-except IndexError:
-    print('Please insert also your password.')
+print(lines)
 
 if user_name in user and user_pass in password:
-    print(f'Hello user {user_name.capitalize()}')
+    print(f'Hello {user_name.capitalize()}')
     print('')
     print('Texts to analyze: ')
     print('')
@@ -97,6 +86,36 @@ if user_name in user and user_pass in password:
         
         print(f'The sum of all the numbers {sum(total)}')
 
+        len_list = []
+
+        for i in text[text_number].split():
+            len_list.append(len(i))
+
+        len_list_sort = sorted(set(len_list)) # len in the graph
+
+        occurences = collections.Counter(len_list)
+        occurences_sorted = sorted(occurences.items())
+
+        for k, v in occurences_sorted:
+            pass
+
+        lines = 30 * '-'
+        space = (8 * v) * ' '
+
+        print(lines)
+        print(f'LEN|  Occurences {space} |NR.' )
+        print(lines)
+
+        for k, v in occurences_sorted:
+
+            stars = v * '*'
+
+            if k <= 9:
+                print((f'  {k:<0}|{stars:<14}{space}|{v}'))
+
+            else:
+                print((f' {k:<0}|{stars:<14}{space}|{v}'))
+
 
     elif text_number == 1:
         # number of words
@@ -144,6 +163,36 @@ if user_name in user and user_pass in password:
         
         print(f'The sum of all the numbers {sum(total)}')
 
+        len_list = []
+
+        for i in text[text_number].split():
+            len_list.append(len(i))
+
+        len_list_sort = sorted(set(len_list)) # len in the graph
+
+        occurences = collections.Counter(len_list)
+        occurences_sorted = sorted(occurences.items())
+
+        for k, v in occurences_sorted:
+            pass
+
+        lines = 30 * '-'
+        space = (6 * v) * ' '
+
+        print(lines)
+        print(f'LEN|  Occurences {space}   |NR.' )
+        print(lines)
+
+        for k, v in occurences_sorted:
+
+            stars = v * '*'
+
+            if k <= 9:
+                print((f'  {k:<0}|{stars:<14}{space} |{v}'))
+            
+            else:
+                print((f' {k:<0}|{stars:<14}{space}|{v}'))
+
     elif text_number == 2:
         # number of words
         print(f'There are {len(text[text_number].split())} words in the selected text.')
@@ -190,8 +239,38 @@ if user_name in user and user_pass in password:
         
         print(f'The sum of all the numbers {sum(total)}')
 
+        len_list = []
+
+        for i in text[text_number].split():
+            len_list.append(len(i))
+
+        len_list_sort = sorted(set(len_list)) # len in the graph
+
+        occurences = collections.Counter(len_list)
+        occurences_sorted = sorted(occurences.items())
+
+        for k, v in occurences_sorted:
+            pass
+
+        lines = 30 * '-'
+        space = (8 * v) * ' '
+
+        print(lines)
+        print(f'LEN|  Occurences {space} |NR.' )
+        print(lines)
+
+        for k, v in occurences_sorted:
+
+            stars = v * '*'
+
+            if k <= 9:
+                print((f'  {k:<0}|{stars:<14}{space}|{v}'))
+
+            else:
+                print((f' {k:<0}|{stars:<14}{space}|{v}'))
+
     else: 
-        print('Wrong number!')
+        print('Wrong number! You have inserted wrong number or a letter')
        
 
 else: 
