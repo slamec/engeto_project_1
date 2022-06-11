@@ -1,5 +1,6 @@
 from collections import Counter
 import collections
+from pprint import pprint
 
 text = ['''
 Situated about 10 miles west of Kemmerer,
@@ -94,5 +95,8 @@ occurences_sorted = sorted(occurences.items())
 print('LEN', 'Occurences'.capitalize(), 'NR.')
 
 for k, v in occurences_sorted:
-        
-        print(k, '|', v * '*', '',v)
+
+        if k <= 9:
+                print(' '+str(k)+'|', v)
+        else:
+                print(str(k)+'|', v)
