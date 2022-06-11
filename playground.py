@@ -82,21 +82,21 @@ for i in text[0].split():
 
 len_list_sort = sorted(set(len_list)) # len in the graph
 
-# for i in len_list_sort:
-#         print(str(i), end='')
-#         print(' ', end='')
-#         print(i * '*') # len of word
-
-
 occurences = collections.Counter(len_list)
-
 occurences_sorted = sorted(occurences.items())
 
-print('LEN', 'Occurences'.capitalize(), 'NR.')
+lines = 30 * '-'
+
+print(lines)
+print(f'LEN|  Occurences  |NR.' )
+print(lines)
 
 for k, v in occurences_sorted:
 
+        stars = v * '*'
+
         if k <= 9:
-                print(' '+str(k)+'|', v)
+                print((f'  {k:<0}|{stars:<14}|{v}'))
+
         else:
-                print(str(k)+'|', v)
+                print((f' {k:<0}|{stars:<14}|{v}'))
