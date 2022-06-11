@@ -1,6 +1,5 @@
-
-
-
+from collections import Counter
+import collections
 
 text = ['''
 Situated about 10 miles west of Kemmerer,
@@ -82,14 +81,18 @@ for i in text[0].split():
 
 len_list_sort = sorted(set(len_list)) # len in the graph
 
-for i in len_list_sort:
-        print(str(i), end='')
-        print(' ', end='')
-        print(i * '*')
-          
+# for i in len_list_sort:
+#         print(str(i), end='')
+#         print(' ', end='')
+#         print(i * '*') # len of word
 
 
+occurences = collections.Counter(len_list)
 
+occurences_sorted = sorted(occurences.items())
 
+print('LEN', 'Occurences'.capitalize(), 'NR.')
 
-
+for k, v in occurences_sorted:
+        
+        print(k, '|', v * '*', '',v)
