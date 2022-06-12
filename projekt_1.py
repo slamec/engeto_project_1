@@ -9,7 +9,7 @@ from typing import Text
 import task_template as texts 
 import collections
 
-lines = 30 * '-'
+lines = 35 * '-'
 user = ['bob', 'mike', 'ann', 'liz']
 password = ['123', 'pass123', 'password123', 'pass123']
 # text has 3 indices
@@ -29,8 +29,8 @@ print(lines)
 
 if user_name in user and user_pass in password:
     print(f'Hello {user_name.capitalize()}')
-    print('')
-    print('Texts to analyze: ')
+    print(lines)
+    print('Here are the texts to analyze: ')
     print('')
 
     for k, v in text_dic.items():
@@ -38,7 +38,11 @@ if user_name in user and user_pass in password:
         print('')
         print(v + '\n')
 
+    print(lines)
+
     text_number = int(input('Insert number of the text to analyze: ')) - 1 
+
+    print(lines)
 
     if text_number == 0:
         # number of words
@@ -99,7 +103,6 @@ if user_name in user and user_pass in password:
         for k, v in occurences_sorted:
             pass
 
-        lines = 35 * '-'
         space = (6 * v) * ' '
 
         print(lines)
@@ -176,7 +179,6 @@ if user_name in user and user_pass in password:
         for k, v in occurences_sorted:
             pass
 
-        lines = 35 * '-'
         space = (6 * v) * ' '
 
         print(lines)
@@ -252,7 +254,6 @@ if user_name in user and user_pass in password:
         for k, v in occurences_sorted:
             pass
 
-        lines = 35 * '-'
         space = (6 * v) * ' '
 
         print(lines)
