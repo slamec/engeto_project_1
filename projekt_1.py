@@ -99,11 +99,11 @@ if user_name in user and user_pass in password:
         for k, v in occurences_sorted:
             pass
 
-        lines = 30 * '-'
-        space = (8 * v) * ' '
+        lines = 35 * '-'
+        space = (6 * v) * ' '
 
         print(lines)
-        print(f'LEN|  Occurences {space} |NR.' )
+        print(f'LEN|{space}Occurences{space}|NR.' )
         print(lines)
 
         for k, v in occurences_sorted:
@@ -111,10 +111,10 @@ if user_name in user and user_pass in password:
             stars = v * '*'
 
             if k <= 9:
-                print((f'  {k:<0}|{stars:<14}{space}|{v}'))
+                print((f'  {k:<0}|{stars:<16}{space}|{v}'))
 
             else:
-                print((f' {k:<0}|{stars:<14}{space}|{v}'))
+                print((f' {k:<0}|{stars:<16}{space}|{v}'))
 
 
     elif text_number == 1:
@@ -176,11 +176,11 @@ if user_name in user and user_pass in password:
         for k, v in occurences_sorted:
             pass
 
-        lines = 30 * '-'
+        lines = 35 * '-'
         space = (6 * v) * ' '
 
         print(lines)
-        print(f'LEN|  Occurences {space}   |NR.' )
+        print(f'LEN|{space}Occurences{space}|NR.' )
         print(lines)
 
         for k, v in occurences_sorted:
@@ -188,10 +188,10 @@ if user_name in user and user_pass in password:
             stars = v * '*'
 
             if k <= 9:
-                print((f'  {k:<0}|{stars:<14}{space} |{v}'))
-            
+                print((f'  {k:<0}|{stars:<16}{space}|{v}'))
+
             else:
-                print((f' {k:<0}|{stars:<14}{space}|{v}'))
+                print((f' {k:<0}|{stars:<16}{space}|{v}'))
 
     elif text_number == 2:
         # number of words
@@ -252,11 +252,11 @@ if user_name in user and user_pass in password:
         for k, v in occurences_sorted:
             pass
 
-        lines = 30 * '-'
-        space = (8 * v) * ' '
+        lines = 35 * '-'
+        space = (6 * v) * ' '
 
         print(lines)
-        print(f'LEN|  Occurences {space} |NR.' )
+        print(f'LEN|{space}Occurences{space}|NR.' )
         print(lines)
 
         for k, v in occurences_sorted:
@@ -264,10 +264,10 @@ if user_name in user and user_pass in password:
             stars = v * '*'
 
             if k <= 9:
-                print((f'  {k:<0}|{stars:<14}{space}|{v}'))
+                print((f'  {k:<0}|{stars:<16}{space}|{v}'))
 
             else:
-                print((f' {k:<0}|{stars:<14}{space}|{v}'))
+                print((f' {k:<0}|{stars:<16}{space}|{v}'))
 
     else: 
         print('Wrong number! You have inserted wrong number or a letter')
