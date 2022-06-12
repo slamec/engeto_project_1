@@ -5,13 +5,15 @@ email: kopecky.mir@gmail.com
 discord: Miro#8969
 
 """
-from typing import Text
+
 import task_template as texts 
 import collections
 
 lines = 35 * '-'
+
 user = ['bob', 'mike', 'ann', 'liz']
 password = ['123', 'pass123', 'password123', 'pass123']
+
 # text has 3 indices
 text = texts.TEXTS
 text_dic = {}
@@ -22,17 +24,21 @@ for items in range(len(text)):
 
 print(lines)
 
+# ask user for username and password
 user_name = input(str('Hello, insert your username: '))
 user_pass = input(str('Now please insert your password: '))
 
 print(lines)
 
+# check if user in user and password list
 if user_name in user and user_pass in password:
-    print(f'Hello {user_name.capitalize()}')
+    print(f'Hello {user_name.capitalize()},')
+    print('')
+    print('here are the texts to be analyzed: ')
     print(lines)
-    print('Here are the texts to analyze: ')
     print('')
 
+    # show texts and numbers for user
     for k, v in text_dic.items():
         print(k+1)
         print('')
@@ -40,6 +46,7 @@ if user_name in user and user_pass in password:
 
     print(lines)
 
+    # -1 to match with list index
     text_number = int(input('Insert number of the text to analyze: ')) - 1 
 
     print(lines)
@@ -90,13 +97,16 @@ if user_name in user and user_pass in password:
         
         print(f'The sum of all the numbers {sum(total)}')
 
+        # lenght of the words
         len_list = []
 
         for i in text[text_number].split():
             len_list.append(len(i))
 
+        # len_list set to avoid duplicies 
         len_list_sort = sorted(set(len_list)) # len in the graph
 
+        # occurences of the len returns dictionary
         occurences = collections.Counter(len_list)
         occurences_sorted = sorted(occurences.items())
 
@@ -113,6 +123,7 @@ if user_name in user and user_pass in password:
 
             stars = v * '*'
 
+            # <16 to center string
             if k <= 9:
                 print((f'  {k:<0}|{stars:<16}{space}|{v}'))
 
@@ -271,8 +282,8 @@ if user_name in user and user_pass in password:
                 print((f' {k:<0}|{stars:<16}{space}|{v}'))
 
     else: 
-        print('Wrong number! You have inserted wrong number or a letter')
+        print('Wrong number! You have inserted wrong number or a letter.')
        
 
 else: 
-    print('Wrong user name or password. The program has been terminated')
+    print('Wrong user name or password. The program has been terminated.')
