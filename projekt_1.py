@@ -131,8 +131,7 @@ if user_pass == user_login[user_name]:
         text_analyze()
 
     else: 
-        print('Wrong number! You have inserted wrong number or a letter.')
-       
+        print('Wrong number! You have inserted wrong number or a letter.')     
 
 else: 
     print('Wrong user name or password. The program has been terminated.')
