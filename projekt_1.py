@@ -6,32 +6,30 @@ discord: Miro#8969
 
 """
 
-import task_template as texts 
+from task_template import TEXTS as text 
 import collections
 
 lines = 35 * '-'
 
-user = ['bob', 'mike', 'ann', 'liz']
-password = ['123', 'pass123', 'password123', 'pass123']
+user_login = {'bob': '123', 'mike': 'pass123', 'ann': 'password123', 'liz': 'pass123'}
 
-# text has 3 indices
-text = texts.TEXTS
-text_dic = {}
+# appended list
+text_list = []
 
-# creates dictionary out of text list
-for items in range(len(text)):
-    text_dic[items] = text[items]
+# creates list from the texts
+for items in text:
+    text_list.append(items.replace('\n', ' '))
 
 print(lines)
 
 # ask user for username and password
-user_name = input(str('Hello, insert your username: '))
-user_pass = input(str('Now please insert your password: '))
+user_name = input('Hello, insert your username: ')
+user_pass = input('Now please insert your password: ')
 
 print(lines)
 
 # check if user in user and password list
-if user_name in user and user_pass in password:
+if user_pass == user_login[user_name]:
     print(f'Hello {user_name.capitalize()},')
     print('')
     print('here are the texts to be analyzed: ')
@@ -39,10 +37,10 @@ if user_name in user and user_pass in password:
     print('')
 
     # show texts and numbers for user
-    for k, v in text_dic.items():
-        print(k+1)
-        print('')
-        print(v + '\n')
+    for (num,item) in enumerate(text_list):
+        print(num + 1)
+        print(item + '\n')
+
 
     print(lines)
 
@@ -51,7 +49,9 @@ if user_name in user and user_pass in password:
 
     print(lines)
 
-    if text_number == 0:
+    def text_analyze():
+        """Analyzes given text and returns statistics"""
+
         # number of words
         print(f'There are {len(text[text_number].split())} words in the selected text.')
 
@@ -110,10 +110,7 @@ if user_name in user and user_pass in password:
         occurences = collections.Counter(len_list)
         occurences_sorted = sorted(occurences.items())
 
-        for k, v in occurences_sorted:
-            pass
-
-        space = (6 * v) * ' '
+        space = 6 * ' '
 
         print(lines)
         print(f'LEN|{space}Occurences{space}|NR.' )
@@ -130,156 +127,8 @@ if user_name in user and user_pass in password:
             else:
                 print((f' {k:<0}|{stars:<16}{space}|{v}'))
 
-
-    elif text_number == 1:
-        # number of words
-        print(f'There are {len(text[text_number].split())} words in the selected text.')
-
-        # number of words starting with titlecase
-        count_title = 0 
-        for i in text[text_number].split():
-            if i.istitle():
-                count_title += 1
-        
-        print(f'There are {count_title} titlecase words.')
-
-        # number of words starting with uppercase
-        count_upper = 0 
-        for i in text[text_number].split():
-            if i.isupper() and not i.istitle():
-                count_upper += 1        
-        
-        print(f'There are {count_upper} uppercase words.')
-
-        # number of words starting with lowercase
-        count_lower = 0 
-        for i in text[text_number].split():
-            if i.islower():
-                count_lower += 1
-
-        print(f'There are {count_lower} lowercase words.')    
-
-        # number of numbers 
-        count_digit = 0 
-        for i in text[text_number].split():
-            if i.isdigit():
-                count_digit += 1
-
-        print(f'There are {count_digit} numeric strings.')
-
-        # sum of digits
-        total = []
-
-        for d in text[text_number].split():
-            if d.isdigit():
-        
-                total.append(int(d))
-        
-        print(f'The sum of all the numbers {sum(total)}')
-
-        len_list = []
-
-        for i in text[text_number].split():
-            len_list.append(len(i))
-
-        len_list_sort = sorted(set(len_list)) # len in the graph
-
-        occurences = collections.Counter(len_list)
-        occurences_sorted = sorted(occurences.items())
-
-        for k, v in occurences_sorted:
-            pass
-
-        space = (6 * v) * ' '
-
-        print(lines)
-        print(f'LEN|{space}Occurences{space}|NR.' )
-        print(lines)
-
-        for k, v in occurences_sorted:
-
-            stars = v * '*'
-
-            if k <= 9:
-                print((f'  {k:<0}|{stars:<16}{space}|{v}'))
-
-            else:
-                print((f' {k:<0}|{stars:<16}{space}|{v}'))
-
-    elif text_number == 2:
-        # number of words
-        print(f'There are {len(text[text_number].split())} words in the selected text.')
-
-        # number of words starting with titlecase
-        count_title = 0 
-        for i in text[text_number].split():
-            if i.istitle():
-                count_title += 1
-        
-        print(f'There are {count_title} titlecase words.')
-
-        # number of words starting with uppercase
-        count_upper = 0 
-        for i in text[text_number].split():
-            if i.isupper() and not i.istitle():
-                count_upper += 1        
-        
-        print(f'There are {count_upper} uppercase words.')
-
-        # number of words starting with lowercase
-        count_lower = 0 
-        for i in text[text_number].split():
-            if i.islower():
-                count_lower += 1
-
-        print(f'There are {count_lower} lowercase words.')
-
-        # number of numbers 
-        count_digit = 0 
-        for i in text[text_number].split():
-            if i.isdigit():
-                count_digit += 1
-
-        print(f'There are {count_digit} numeric strings.')
-
-        # sum of digits
-        total = []
-
-        for d in text[text_number].split():
-            if d.isdigit():
-        
-                total.append(int(d))
-        
-        print(f'The sum of all the numbers {sum(total)}')
-
-        len_list = []
-
-        for i in text[text_number].split():
-            len_list.append(len(i))
-
-        len_list_sort = sorted(set(len_list)) # len in the graph
-
-        occurences = collections.Counter(len_list)
-        occurences_sorted = sorted(occurences.items())
-
-        for k, v in occurences_sorted:
-            pass
-
-        space = (6 * v) * ' '
-
-        print(lines)
-        print(f'LEN|{space}Occurences{space}|NR.' )
-        print(lines)
-
-        for k, v in occurences_sorted:
-
-            stars = v * '*'
-
-            if k <= 9:
-                print((f'  {k:<0}|{stars:<16}{space}|{v}'))
-
-            else:
-                print((f' {k:<0}|{stars:<16}{space}|{v}'))
+    if text_number == text_number:
+        text_analyze()
 
     else: 
         print('Wrong number! You have inserted wrong number or a letter.')
